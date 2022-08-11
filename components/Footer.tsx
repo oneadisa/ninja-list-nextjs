@@ -1,9 +1,9 @@
 
 const Footer = () => {
-    const year = new Date().getFullYear
+    let year: number = new Date().getFullYear();
   return (
     <footer>
-      {/* Copyright {year} Ninja List */}
+      Copyright {year} Ninja List
     </footer>
   );
 }
