@@ -13,7 +13,7 @@ const NotFound = (props: { timerMs: number }) => {
       // router.go(1)
       router.push('/')
     }, 3000)
-  }, [])
+  }, [router])
   return (
     <div className="not-found">
       <h1>Ooops...</h1>
