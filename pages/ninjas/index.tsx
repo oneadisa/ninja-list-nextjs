@@ -1,5 +1,6 @@
 import { Key, ReactElement, JSXElementConstructor, ReactFragment, ReactPortal } from 'react';
 import styles from '../../styles/Jobs.module.css'
+import Link from 'next/link'
 
 export const getStaticProps = async() => {
     const res = await fetch ('https://jsonplaceholder.typicode.com/users');
@@ -22,11 +23,11 @@ const Ninjas = ({ninjas} : Ninjas) =>
                 All Ninjas
             </h1>
             {ninjas.map((ninja: { id: Key | null | undefined; name: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; }) => (
-        <div key={ninja.id}>
+        <Link key={ninja.id} href={'/ninjas/'+ ninja.id}>
           <a className={styles.single}>
             <h3>{ ninja.name }</h3>
           </a>
-        </div>
+        </Link>
       ))}
             </>
         )
